@@ -19,6 +19,13 @@ The **Bimanual Sign Language Communication System** enables communication betwee
 
 - **ROS Integration**: Handles communication between the robotic hand, simulation, vision and voice recognition to ensure real-time functionality.
 
+## Team Structure
+
+- **Kareem Salah**: Robot Control & Communication
+- **Eslam Wael**: Robot Control & Communication
+- **Ziad Yasser**: Computer Vision
+- **Mohammed Younes**: Voice Recognition
+
 ## Folder Structure
 
 ### Track 1:
