@@ -1,0 +1,34 @@
+controller_list:
+  - name: fake_main_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - joint_1
+      - joint_2
+      - joint_3
+      - joint_8
+      - joint_9
+      - joint_4
+      - joint_10
+      - joint_11
+      - joint_12
+      - joint_5
+      - joint_13
+      - joint_14
+      - joint_15
+      - joint_6
+      - joint_16
+      - joint_17
+      - joint_7
+      - joint_18
+      - joint_19
+  - name: fake_ee_group_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - joint_9
+      - joint_12
+      - joint_15
+      - joint_17
+      - joint_19
+initial:  # Define initial robot poses per group
+  - group: main
+    pose: home

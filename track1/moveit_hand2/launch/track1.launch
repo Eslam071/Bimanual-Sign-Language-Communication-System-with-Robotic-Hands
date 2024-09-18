@@ -1,0 +1,4 @@
+<launch>
+	<node name="vision_node" pkg="t2" type="yolo_Node_A.py" respawn="false"/>
+	<node name="voice_node" pkg="t2" type="cam_to_speech.py" respawn="false" output="screen"/>
+</launch>

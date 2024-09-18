@@ -1,0 +1,60 @@
+robot_arm_controller:
+  type: "position_controllers/JointTrajectoryController"
+  joints: 
+    - joint_1
+    - joint_2
+    - joint_3
+    - joint_4
+    - joint_5
+    - joint_6
+    - joint_7
+    - joint_8
+    - joint_10
+    - joint_11
+    - joint_13
+    - joint_14
+    - joint_16
+    - joint_18
+  constraints:
+    goal_time: 0.6
+    stopped_velocity_tolerance: 0.02
+    joint_1:
+      goal: 0.2  # Adjust this value
+      trajectory: 0.5
+    joint_2:
+      goal: 0.2  # Adjust this value
+      trajectory: 0.5
+      
+  trajectory_execution:
+    allowed_execution_duration_scaling: 1.2
+    allowed_goal_duration_margin: 0.5
+    allowed_goal_tolerance: 0.01
+    allowed_velocity_scaling: 3.0
+    allowed_acceleration_scaling: 3.0
+
+hand_ee_controller:
+  type: "position_controllers/JointTrajectoryController"
+  joints: 
+    - joint_9
+    - joint_12
+    - joint_15
+    - joint_17
+    - joint_19
+  constraints:
+    goal_time: 0.6
+    stopped_velocity_tolerance: 0.02
+    joint_9:
+      goal: 0.2  # Adjust this value
+      trajectory: 0.5
+      
+  trajectory_execution:
+    allowed_execution_duration_scaling: 1.2
+    allowed_goal_duration_margin: 0.5
+    allowed_goal_tolerance: 0.01
+    allowed_velocity_scaling: 3.0
+    allowed_acceleration_scaling: 3.0
+
+joint_state_controller:
+  type: "joint_state_controller/JointStateController"
+  publish_rate: 50
+  

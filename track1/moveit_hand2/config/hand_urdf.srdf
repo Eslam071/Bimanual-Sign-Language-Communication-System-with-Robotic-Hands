@@ -1,0 +1,1104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
+<robot name="hand_urdf">
+    <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
+    <!--LINKS: When a link is specified, the parent joint of that link (if it exists) is automatically included-->
+    <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
+    <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
+    <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
+    <group name="main">
+        <joint name="base_joint"/>
+        <joint name="joint_1"/>
+        <joint name="joint_2"/>
+        <joint name="joint_3"/>
+        <joint name="joint_8"/>
+        <joint name="joint_9"/>
+        <joint name="joint_4"/>
+        <joint name="joint_10"/>
+        <joint name="joint_11"/>
+        <joint name="joint_12"/>
+        <joint name="joint_5"/>
+        <joint name="joint_13"/>
+        <joint name="joint_14"/>
+        <joint name="joint_15"/>
+        <joint name="joint_6"/>
+        <joint name="joint_16"/>
+        <joint name="joint_17"/>
+        <joint name="joint_7"/>
+        <joint name="joint_18"/>
+        <joint name="joint_19"/>
+    </group>
+    <group name="ee_group">
+        <joint name="joint_9"/>
+        <joint name="joint_12"/>
+        <joint name="joint_15"/>
+        <joint name="joint_17"/>
+        <joint name="joint_19"/>
+    </group>
+    <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
+    <group_state name="home" group="main">
+        <joint name="joint_1" value="0"/>
+        <joint name="joint_10" value="0"/>
+        <joint name="joint_11" value="0"/>
+        <joint name="joint_12" value="0"/>
+        <joint name="joint_13" value="0"/>
+        <joint name="joint_14" value="0"/>
+        <joint name="joint_15" value="0"/>
+        <joint name="joint_16" value="0"/>
+        <joint name="joint_17" value="0"/>
+        <joint name="joint_18" value="0"/>
+        <joint name="joint_19" value="0"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="0"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="0"/>
+        <joint name="joint_7" value="0"/>
+        <joint name="joint_8" value="0"/>
+        <joint name="joint_9" value="0"/>
+    </group_state>
+    <group_state name="close" group="main">
+        <joint name="joint_1" value="0"/>
+        <joint name="joint_10" value="1.57"/>
+        <joint name="joint_11" value="1.57"/>
+        <joint name="joint_12" value="1"/>
+        <joint name="joint_13" value="1.57"/>
+        <joint name="joint_14" value="-1.57"/>
+        <joint name="joint_15" value="0.9"/>
+        <joint name="joint_16" value="1.57"/>
+        <joint name="joint_17" value="0.9"/>
+        <joint name="joint_18" value="-1.57"/>
+        <joint name="joint_19" value="1"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="0"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="1.57"/>
+        <joint name="joint_7" value="1.57"/>
+        <joint name="joint_8" value="1.57"/>
+        <joint name="joint_9" value="-1"/>
+    </group_state>
+    <group_state name="ا" group="main">
+        <joint name="joint_1" value="1.57"/>
+        <joint name="joint_10" value="1.57"/>
+        <joint name="joint_11" value="1.57"/>
+        <joint name="joint_12" value="1"/>
+        <joint name="joint_13" value="1.57"/>
+        <joint name="joint_14" value="-1.57"/>
+        <joint name="joint_15" value="0.9662"/>
+        <joint name="joint_16" value="1.57"/>
+        <joint name="joint_17" value="0.9"/>
+        <joint name="joint_18" value="-1.57"/>
+        <joint name="joint_19" value="1.1"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="0"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="1.57"/>
+        <joint name="joint_7" value="1.57"/>
+        <joint name="joint_8" value="0"/>
+        <joint name="joint_9" value="0"/>
+    </group_state>
+    <group_state name="الف" group="main">
+        <joint name="joint_1" value="1.57"/>
+        <joint name="joint_10" value="1.57"/>
+        <joint name="joint_11" value="1.57"/>
+        <joint name="joint_12" value="1"/>
+        <joint name="joint_13" value="1.57"/>
+        <joint name="joint_14" value="-1.57"/>
+        <joint name="joint_15" value="0.9"/>
+        <joint name="joint_16" value="1.57"/>
+        <joint name="joint_17" value="0.9"/>
+        <joint name="joint_18" value="-1.57"/>
+        <joint name="joint_19" value="1"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="0"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="1.57"/>
+        <joint name="joint_7" value="1.57"/>
+        <joint name="joint_8" value="0"/>
+        <joint name="joint_9" value="0"/>
+    </group_state>
+    <group_state name="باء" group="main">
+        <joint name="joint_1" value="0"/>
+        <joint name="joint_10" value="1.57"/>
+        <joint name="joint_11" value="1.57"/>
+        <joint name="joint_12" value="0.994"/>
+        <joint name="joint_13" value="1.57"/>
+        <joint name="joint_14" value="-1.57"/>
+        <joint name="joint_15" value="0.9"/>
+        <joint name="joint_16" value="1.57"/>
+        <joint name="joint_17" value="0.6"/>
+        <joint name="joint_18" value="0"/>
+        <joint name="joint_19" value="0"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="0"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="1.57"/>
+        <joint name="joint_7" value="0"/>
+        <joint name="joint_8" value="1.57"/>
+        <joint name="joint_9" value="-1.57"/>
+    </group_state>
+    <group_state name="تاء" group="main">
+        <joint name="joint_1" value="0"/>
+        <joint name="joint_10" value="1.57"/>
+        <joint name="joint_11" value="1.57"/>
+        <joint name="joint_12" value="1"/>
+        <joint name="joint_13" value="1.57"/>
+        <joint name="joint_14" value="-1.57"/>
+        <joint name="joint_15" value="0.9"/>
+        <joint name="joint_16" value="0"/>
+        <joint name="joint_17" value="0"/>
+        <joint name="joint_18" value="0"/>
+        <joint name="joint_19" value="0"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="1"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="0"/>
+        <joint name="joint_7" value="0"/>
+        <joint name="joint_8" value="1.2"/>
+        <joint name="joint_9" value="-1.3"/>
+    </group_state>
+    <group_state name="ثاء" group="main">
+        <joint name="joint_1" value="0"/>
+        <joint name="joint_10" value="1.57"/>
+        <joint name="joint_11" value="1.57"/>
+        <joint name="joint_12" value="0.994"/>
+        <joint name="joint_13" value="0"/>
+        <joint name="joint_14" value="0"/>
+        <joint name="joint_15" value="0"/>
+        <joint name="joint_16" value="0"/>
+        <joint name="joint_17" value="0"/>
+        <joint name="joint_18" value="0"/>
+        <joint name="joint_19" value="0"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="1"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="0"/>
+        <joint name="joint_7" value="0"/>
+        <joint name="joint_8" value="1.2"/>
+        <joint name="joint_9" value="-1.3"/>
+    </group_state>
+    <group_state name="سين" group="main">
+        <joint name="joint_1" value="0"/>
+        <joint name="joint_10" value="0"/>
+        <joint name="joint_11" value="0"/>
+        <joint name="joint_12" value="0"/>
+        <joint name="joint_13" value="0"/>
+        <joint name="joint_14" value="0"/>
+        <joint name="joint_15" value="0"/>
+        <joint name="joint_16" value="0"/>
+        <joint name="joint_17" value="0"/>
+        <joint name="joint_18" value="0"/>
+        <joint name="joint_19" value="0"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="0"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="0"/>
+        <joint name="joint_7" value="0"/>
+        <joint name="joint_8" value="0"/>
+        <joint name="joint_9" value="0"/>
+    </group_state>
+    <group_state name="شين" group="main">
+        <joint name="joint_1" value="0"/>
+        <joint name="joint_10" value="0"/>
+        <joint name="joint_11" value="0"/>
+        <joint name="joint_12" value="0"/>
+        <joint name="joint_13" value="0"/>
+        <joint name="joint_14" value="0"/>
+        <joint name="joint_15" value="0"/>
+        <joint name="joint_16" value="0"/>
+        <joint name="joint_17" value="0"/>
+        <joint name="joint_18" value="0"/>
+        <joint name="joint_19" value="0"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="0"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="0"/>
+        <joint name="joint_7" value="0"/>
+        <joint name="joint_8" value="0"/>
+        <joint name="joint_9" value="0"/>
+    </group_state>
+    <group_state name="جيم" group="main">
+        <joint name="joint_1" value="0"/>
+        <joint name="joint_10" value="0.7"/>
+        <joint name="joint_11" value="0.7"/>
+        <joint name="joint_12" value="0.7"/>
+        <joint name="joint_13" value="0.7"/>
+        <joint name="joint_14" value="-0.7"/>
+        <joint name="joint_15" value="0.7"/>
+        <joint name="joint_16" value="0.7"/>
+        <joint name="joint_17" value="0.7"/>
+        <joint name="joint_18" value="-0.7"/>
+        <joint name="joint_19" value="0.7"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="0.9"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="0.7"/>
+        <joint name="joint_7" value="0.7"/>
+        <joint name="joint_8" value="0.6"/>
+        <joint name="joint_9" value="-0.9"/>
+    </group_state>
+    <group_state name="حاء" group="main">
+        <joint name="joint_1" value="0"/>
+        <joint name="joint_10" value="0.7"/>
+        <joint name="joint_11" value="0.7"/>
+        <joint name="joint_12" value="0.7"/>
+        <joint name="joint_13" value="0.7"/>
+        <joint name="joint_14" value="-0.7"/>
+        <joint name="joint_15" value="0.7"/>
+        <joint name="joint_16" value="0.7"/>
+        <joint name="joint_17" value="0.7"/>
+        <joint name="joint_18" value="-0.7"/>
+        <joint name="joint_19" value="0.7"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="0"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="0.7"/>
+        <joint name="joint_7" value="0.7"/>
+        <joint name="joint_8" value="0"/>
+        <joint name="joint_9" value="-0.7"/>
+    </group_state>
+    <group_state name="خاء" group="main">
+        <joint name="joint_1" value="0"/>
+        <joint name="joint_10" value="1.57"/>
+        <joint name="joint_11" value="0"/>
+        <joint name="joint_12" value="0.6"/>
+        <joint name="joint_13" value="1.57"/>
+        <joint name="joint_14" value="0"/>
+        <joint name="joint_15" value="0.6"/>
+        <joint name="joint_16" value="0"/>
+        <joint name="joint_17" value="0.6"/>
+        <joint name="joint_18" value="0"/>
+        <joint name="joint_19" value="0.6"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="0"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="1.57"/>
+        <joint name="joint_7" value="1.57"/>
+        <joint name="joint_8" value="0"/>
+        <joint name="joint_9" value="0"/>
+    </group_state>
+    <group_state name="دال" group="main">
+        <joint name="joint_1" value="0"/>
+        <joint name="joint_10" value="1.57"/>
+        <joint name="joint_11" value="1.57"/>
+        <joint name="joint_12" value="0.6"/>
+        <joint name="joint_13" value="1.57"/>
+        <joint name="joint_14" value="-1.57"/>
+        <joint name="joint_15" value="0.6"/>
+        <joint name="joint_16" value="1.57"/>
+        <joint name="joint_17" value="0.6"/>
+        <joint name="joint_18" value="-0.36"/>
+        <joint name="joint_19" value="0.6"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="1.57"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="1.57"/>
+        <joint name="joint_7" value="0.9"/>
+        <joint name="joint_8" value="0"/>
+        <joint name="joint_9" value="0"/>
+    </group_state>
+    <group_state name="ذ" group="main">
+        <joint name="joint_1" value="0"/>
+        <joint name="joint_10" value="1.57"/>
+        <joint name="joint_11" value="1.57"/>
+        <joint name="joint_12" value="0.6"/>
+        <joint name="joint_13" value="1.57"/>
+        <joint name="joint_14" value="-1.57"/>
+        <joint name="joint_15" value="0.6"/>
+        <joint name="joint_16" value="0.36"/>
+        <joint name="joint_17" value="0.6"/>
+        <joint name="joint_18" value="-0.6"/>
+        <joint name="joint_19" value="0.6"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="1.57"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="0.85"/>
+        <joint name="joint_7" value="0.85"/>
+        <joint name="joint_8" value="0"/>
+        <joint name="joint_9" value="0"/>
+    </group_state>
+    <group_state name="راء" group="main">
+        <joint name="joint_1" value="0"/>
+        <joint name="joint_10" value="1.57"/>
+        <joint name="joint_11" value="1.57"/>
+        <joint name="joint_12" value="0.6"/>
+        <joint name="joint_13" value="1.57"/>
+        <joint name="joint_14" value="-1.57"/>
+        <joint name="joint_15" value="0.6"/>
+        <joint name="joint_16" value="1.57"/>
+        <joint name="joint_17" value="0.6"/>
+        <joint name="joint_18" value="-0.36"/>
+        <joint name="joint_19" value="0.6"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="0.9"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="1.57"/>
+        <joint name="joint_7" value="0.5"/>
+        <joint name="joint_8" value="0.7"/>
+        <joint name="joint_9" value="-1.57"/>
+    </group_state>
+    <group_state name="زين" group="main">
+        <joint name="joint_1" value="0"/>
+        <joint name="joint_10" value="1.57"/>
+        <joint name="joint_11" value="1.57"/>
+        <joint name="joint_12" value="0.6"/>
+        <joint name="joint_13" value="1.57"/>
+        <joint name="joint_14" value="-1.57"/>
+        <joint name="joint_15" value="0.6"/>
+        <joint name="joint_16" value="0.36"/>
+        <joint name="joint_17" value="0.6"/>
+        <joint name="joint_18" value="-0.36"/>
+        <joint name="joint_19" value="0.6"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="1.57"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="0.5"/>
+        <joint name="joint_7" value="0.5"/>
+        <joint name="joint_8" value="0.2"/>
+        <joint name="joint_9" value="-0.6"/>
+    </group_state>
+    <group_state name="صاد" group="main">
+        <joint name="joint_1" value="0"/>
+        <joint name="joint_10" value="1.57"/>
+        <joint name="joint_11" value="1.57"/>
+        <joint name="joint_12" value="1"/>
+        <joint name="joint_13" value="1.57"/>
+        <joint name="joint_14" value="-1.57"/>
+        <joint name="joint_15" value="0.9"/>
+        <joint name="joint_16" value="1.57"/>
+        <joint name="joint_17" value="0.9"/>
+        <joint name="joint_18" value="-1.57"/>
+        <joint name="joint_19" value="1"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="0"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="1.57"/>
+        <joint name="joint_7" value="1.57"/>
+        <joint name="joint_8" value="1.57"/>
+        <joint name="joint_9" value="-1"/>
+    </group_state>
+    <group_state name="ضاد" group="main">
+        <joint name="joint_1" value="0"/>
+        <joint name="joint_10" value="1.57"/>
+        <joint name="joint_11" value="1.57"/>
+        <joint name="joint_12" value="1"/>
+        <joint name="joint_13" value="1.57"/>
+        <joint name="joint_14" value="-1.57"/>
+        <joint name="joint_15" value="0.9"/>
+        <joint name="joint_16" value="1.57"/>
+        <joint name="joint_17" value="0.9569"/>
+        <joint name="joint_18" value="-1.57"/>
+        <joint name="joint_19" value="1"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="0"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="1.57"/>
+        <joint name="joint_7" value="1.57"/>
+        <joint name="joint_8" value="0"/>
+        <joint name="joint_9" value="0"/>
+    </group_state>
+    <group_state name="لام" group="main">
+        <joint name="joint_1" value="0"/>
+        <joint name="joint_10" value="1.57"/>
+        <joint name="joint_11" value="1.57"/>
+        <joint name="joint_12" value="1"/>
+        <joint name="joint_13" value="1.57"/>
+        <joint name="joint_14" value="-1.57"/>
+        <joint name="joint_15" value="0.9"/>
+        <joint name="joint_16" value="1.57"/>
+        <joint name="joint_17" value="0.9569"/>
+        <joint name="joint_18" value="0"/>
+        <joint name="joint_19" value="0"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="0"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="1.57"/>
+        <joint name="joint_7" value="0"/>
+        <joint name="joint_8" value="0"/>
+        <joint name="joint_9" value="0"/>
+    </group_state>
+    <group_state name="ميم" group="main">
+        <joint name="joint_1" value="0"/>
+        <joint name="joint_10" value="0"/>
+        <joint name="joint_11" value="0"/>
+        <joint name="joint_12" value="0"/>
+        <joint name="joint_13" value="1.57"/>
+        <joint name="joint_14" value="-1.57"/>
+        <joint name="joint_15" value="0.9662"/>
+        <joint name="joint_16" value="1.57"/>
+        <joint name="joint_17" value="0.9"/>
+        <joint name="joint_18" value="-1.57"/>
+        <joint name="joint_19" value="1"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="0"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="1.57"/>
+        <joint name="joint_7" value="1.57"/>
+        <joint name="joint_8" value="1.57"/>
+        <joint name="joint_9" value="-1.57"/>
+    </group_state>
+    <group_state name="نون" group="main">
+        <joint name="joint_1" value="0"/>
+        <joint name="joint_10" value="1.57"/>
+        <joint name="joint_11" value="1.57"/>
+        <joint name="joint_12" value="0.6"/>
+        <joint name="joint_13" value="1.57"/>
+        <joint name="joint_14" value="-1.57"/>
+        <joint name="joint_15" value="0.6"/>
+        <joint name="joint_16" value="1.57"/>
+        <joint name="joint_17" value="0.6"/>
+        <joint name="joint_18" value="-0.36"/>
+        <joint name="joint_19" value="0.6"/>
+        <joint name="joint_2" value="-0.8"/>
+        <joint name="joint_3" value="1.57"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="1.57"/>
+        <joint name="joint_7" value="0.85"/>
+        <joint name="joint_8" value="0"/>
+        <joint name="joint_9" value="0"/>
+    </group_state>
+    <group_state name="ياء" group="main">
+        <joint name="joint_1" value="0"/>
+        <joint name="joint_10" value="0"/>
+        <joint name="joint_11" value="0"/>
+        <joint name="joint_12" value="0"/>
+        <joint name="joint_13" value="1.57"/>
+        <joint name="joint_14" value="-1.57"/>
+        <joint name="joint_15" value="0.9662"/>
+        <joint name="joint_16" value="1.57"/>
+        <joint name="joint_17" value="0.9"/>
+        <joint name="joint_18" value="-1.57"/>
+        <joint name="joint_19" value="1"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="0"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="1.57"/>
+        <joint name="joint_7" value="1.57"/>
+        <joint name="joint_8" value="0"/>
+        <joint name="joint_9" value="0"/>
+    </group_state>
+    <group_state name="طاء" group="main">
+        <joint name="joint_1" value="0"/>
+        <joint name="joint_10" value="1.57"/>
+        <joint name="joint_11" value="1.57"/>
+        <joint name="joint_12" value="1"/>
+        <joint name="joint_13" value="1.57"/>
+        <joint name="joint_14" value="-1.57"/>
+        <joint name="joint_15" value="0.9"/>
+        <joint name="joint_16" value="0"/>
+        <joint name="joint_17" value="0.5"/>
+        <joint name="joint_18" value="0"/>
+        <joint name="joint_19" value="0"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="1.2"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="1.57"/>
+        <joint name="joint_7" value="0"/>
+        <joint name="joint_8" value="0.4"/>
+        <joint name="joint_9" value="0"/>
+    </group_state>
+    <group_state name="ظاء" group="main">
+        <joint name="joint_1" value="0"/>
+        <joint name="joint_10" value="1.57"/>
+        <joint name="joint_11" value="1.57"/>
+        <joint name="joint_12" value="1"/>
+        <joint name="joint_13" value="1.57"/>
+        <joint name="joint_14" value="-1.57"/>
+        <joint name="joint_15" value="0.9"/>
+        <joint name="joint_16" value="0.5"/>
+        <joint name="joint_17" value="0.5"/>
+        <joint name="joint_18" value="0"/>
+        <joint name="joint_19" value="0"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="1.57"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="1.57"/>
+        <joint name="joint_7" value="0"/>
+        <joint name="joint_8" value="0"/>
+        <joint name="joint_9" value="0"/>
+    </group_state>
+    <group_state name="عين" group="main">
+        <joint name="joint_1" value="1.57"/>
+        <joint name="joint_10" value="1.57"/>
+        <joint name="joint_11" value="1.57"/>
+        <joint name="joint_12" value="1"/>
+        <joint name="joint_13" value="1.57"/>
+        <joint name="joint_14" value="-1.57"/>
+        <joint name="joint_15" value="0.9"/>
+        <joint name="joint_16" value="0"/>
+        <joint name="joint_17" value="0"/>
+        <joint name="joint_18" value="0"/>
+        <joint name="joint_19" value="0"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="1.57"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="1.57"/>
+        <joint name="joint_7" value="1.57"/>
+        <joint name="joint_8" value="1.57"/>
+        <joint name="joint_9" value="0"/>
+    </group_state>
+    <group_state name="غين" group="main">
+        <joint name="joint_1" value="1.57"/>
+        <joint name="joint_10" value="1.57"/>
+        <joint name="joint_11" value="1.57"/>
+        <joint name="joint_12" value="1"/>
+        <joint name="joint_13" value="1.57"/>
+        <joint name="joint_14" value="-1.57"/>
+        <joint name="joint_15" value="0.9"/>
+        <joint name="joint_16" value="0.5"/>
+        <joint name="joint_17" value="0.2"/>
+        <joint name="joint_18" value="-0.5"/>
+        <joint name="joint_19" value="0.2"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="1.152"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="1.57"/>
+        <joint name="joint_7" value="1.57"/>
+        <joint name="joint_8" value="0"/>
+        <joint name="joint_9" value="0"/>
+    </group_state>
+    <group_state name="فاء" group="main">
+        <joint name="joint_1" value="0"/>
+        <joint name="joint_10" value="1.57"/>
+        <joint name="joint_11" value="1.57"/>
+        <joint name="joint_12" value="1"/>
+        <joint name="joint_13" value="1.57"/>
+        <joint name="joint_14" value="-1.57"/>
+        <joint name="joint_15" value="0.9"/>
+        <joint name="joint_16" value="1.57"/>
+        <joint name="joint_17" value="0.9"/>
+        <joint name="joint_18" value="-1.57"/>
+        <joint name="joint_19" value="1"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="0"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="1.57"/>
+        <joint name="joint_7" value="0"/>
+        <joint name="joint_8" value="1.57"/>
+        <joint name="joint_9" value="-1"/>
+    </group_state>
+    <group_state name="كاف" group="main">
+        <joint name="joint_1" value="0"/>
+        <joint name="joint_10" value="0"/>
+        <joint name="joint_11" value="0"/>
+        <joint name="joint_12" value="0"/>
+        <joint name="joint_13" value="0"/>
+        <joint name="joint_14" value="0"/>
+        <joint name="joint_15" value="0"/>
+        <joint name="joint_16" value="0"/>
+        <joint name="joint_17" value="0"/>
+        <joint name="joint_18" value="0"/>
+        <joint name="joint_19" value="0"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="0"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="0"/>
+        <joint name="joint_7" value="0"/>
+        <joint name="joint_8" value="1.57"/>
+        <joint name="joint_9" value="-1.57"/>
+    </group_state>
+    <group_state name="واو" group="main">
+        <joint name="joint_1" value="1.57"/>
+        <joint name="joint_10" value="1"/>
+        <joint name="joint_11" value="1.57"/>
+        <joint name="joint_12" value="1"/>
+        <joint name="joint_13" value="1"/>
+        <joint name="joint_14" value="-1.57"/>
+        <joint name="joint_15" value="0.9"/>
+        <joint name="joint_16" value="1.57"/>
+        <joint name="joint_17" value="0.9"/>
+        <joint name="joint_18" value="-1.57"/>
+        <joint name="joint_19" value="1"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="0"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="1"/>
+        <joint name="joint_7" value="1"/>
+        <joint name="joint_8" value="1"/>
+        <joint name="joint_9" value="-1"/>
+    </group_state>
+    <group_state name="ب" group="main">
+        <joint name="joint_1" value="0"/>
+        <joint name="joint_10" value="1.57"/>
+        <joint name="joint_11" value="1.57"/>
+        <joint name="joint_12" value="0.994"/>
+        <joint name="joint_13" value="1.57"/>
+        <joint name="joint_14" value="-1.57"/>
+        <joint name="joint_15" value="0.9"/>
+        <joint name="joint_16" value="1.57"/>
+        <joint name="joint_17" value="0.6"/>
+        <joint name="joint_18" value="0"/>
+        <joint name="joint_19" value="0"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="0"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="1.57"/>
+        <joint name="joint_7" value="0"/>
+        <joint name="joint_8" value="1.57"/>
+        <joint name="joint_9" value="-1.57"/>
+    </group_state>
+    <group_state name="ص" group="main">
+        <joint name="joint_1" value="0"/>
+        <joint name="joint_10" value="1.57"/>
+        <joint name="joint_11" value="1.57"/>
+        <joint name="joint_12" value="1"/>
+        <joint name="joint_13" value="1.57"/>
+        <joint name="joint_14" value="-1.57"/>
+        <joint name="joint_15" value="0.9"/>
+        <joint name="joint_16" value="1.57"/>
+        <joint name="joint_17" value="0.9"/>
+        <joint name="joint_18" value="-1.57"/>
+        <joint name="joint_19" value="1"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="0"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="1.57"/>
+        <joint name="joint_7" value="1.57"/>
+        <joint name="joint_8" value="1.57"/>
+        <joint name="joint_9" value="-1"/>
+    </group_state>
+    <group_state name="ض" group="main">
+        <joint name="joint_1" value="0"/>
+        <joint name="joint_10" value="1.57"/>
+        <joint name="joint_11" value="1.57"/>
+        <joint name="joint_12" value="1"/>
+        <joint name="joint_13" value="1.57"/>
+        <joint name="joint_14" value="-1.57"/>
+        <joint name="joint_15" value="0.9"/>
+        <joint name="joint_16" value="1.57"/>
+        <joint name="joint_17" value="0.9569"/>
+        <joint name="joint_18" value="-1.57"/>
+        <joint name="joint_19" value="1"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="0"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="1.57"/>
+        <joint name="joint_7" value="1.57"/>
+        <joint name="joint_8" value="0"/>
+        <joint name="joint_9" value="0"/>
+    </group_state>
+    <group_state name="ل" group="main">
+        <joint name="joint_1" value="0"/>
+        <joint name="joint_10" value="1.57"/>
+        <joint name="joint_11" value="1.57"/>
+        <joint name="joint_12" value="1"/>
+        <joint name="joint_13" value="1.57"/>
+        <joint name="joint_14" value="-1.57"/>
+        <joint name="joint_15" value="0.9"/>
+        <joint name="joint_16" value="1.57"/>
+        <joint name="joint_17" value="0.9569"/>
+        <joint name="joint_18" value="0"/>
+        <joint name="joint_19" value="0"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="0"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="1.57"/>
+        <joint name="joint_7" value="0"/>
+        <joint name="joint_8" value="0"/>
+        <joint name="joint_9" value="0"/>
+    </group_state>
+    <group_state name="ن" group="main">
+        <joint name="joint_1" value="0"/>
+        <joint name="joint_10" value="1.57"/>
+        <joint name="joint_11" value="1.57"/>
+        <joint name="joint_12" value="0.6"/>
+        <joint name="joint_13" value="1.57"/>
+        <joint name="joint_14" value="-1.57"/>
+        <joint name="joint_15" value="0.6"/>
+        <joint name="joint_16" value="1.57"/>
+        <joint name="joint_17" value="0.6"/>
+        <joint name="joint_18" value="-0.36"/>
+        <joint name="joint_19" value="0.6"/>
+        <joint name="joint_2" value="-0.8"/>
+        <joint name="joint_3" value="1.57"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="1.57"/>
+        <joint name="joint_7" value="0.85"/>
+        <joint name="joint_8" value="0"/>
+        <joint name="joint_9" value="0"/>
+    </group_state>
+    <group_state name="ط" group="main">
+        <joint name="joint_1" value="0"/>
+        <joint name="joint_10" value="1.57"/>
+        <joint name="joint_11" value="1.57"/>
+        <joint name="joint_12" value="1"/>
+        <joint name="joint_13" value="1.57"/>
+        <joint name="joint_14" value="-1.57"/>
+        <joint name="joint_15" value="0.9"/>
+        <joint name="joint_16" value="0"/>
+        <joint name="joint_17" value="0.5"/>
+        <joint name="joint_18" value="0"/>
+        <joint name="joint_19" value="0"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="1.2"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="1.57"/>
+        <joint name="joint_7" value="0"/>
+        <joint name="joint_8" value="0.4"/>
+        <joint name="joint_9" value="0"/>
+    </group_state>
+    <group_state name="ع" group="main">
+        <joint name="joint_1" value="1.57"/>
+        <joint name="joint_10" value="1.57"/>
+        <joint name="joint_11" value="1.57"/>
+        <joint name="joint_12" value="1"/>
+        <joint name="joint_13" value="1.57"/>
+        <joint name="joint_14" value="-1.57"/>
+        <joint name="joint_15" value="0.9"/>
+        <joint name="joint_16" value="0"/>
+        <joint name="joint_17" value="0"/>
+        <joint name="joint_18" value="0"/>
+        <joint name="joint_19" value="0"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="1.57"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="1.57"/>
+        <joint name="joint_7" value="1.57"/>
+        <joint name="joint_8" value="1.57"/>
+        <joint name="joint_9" value="0"/>
+    </group_state>
+    <group_state name="غ" group="main">
+        <joint name="joint_1" value="1.57"/>
+        <joint name="joint_10" value="1.57"/>
+        <joint name="joint_11" value="1.57"/>
+        <joint name="joint_12" value="1"/>
+        <joint name="joint_13" value="1.57"/>
+        <joint name="joint_14" value="-1.57"/>
+        <joint name="joint_15" value="0.9"/>
+        <joint name="joint_16" value="0.5"/>
+        <joint name="joint_17" value="0.2"/>
+        <joint name="joint_18" value="-0.5"/>
+        <joint name="joint_19" value="0.2"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="1.152"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="1.57"/>
+        <joint name="joint_7" value="1.57"/>
+        <joint name="joint_8" value="0"/>
+        <joint name="joint_9" value="0"/>
+    </group_state>
+    <group_state name="ف" group="main">
+        <joint name="joint_1" value="0"/>
+        <joint name="joint_10" value="1.57"/>
+        <joint name="joint_11" value="1.57"/>
+        <joint name="joint_12" value="1"/>
+        <joint name="joint_13" value="1.57"/>
+        <joint name="joint_14" value="-1.57"/>
+        <joint name="joint_15" value="0.9"/>
+        <joint name="joint_16" value="1.57"/>
+        <joint name="joint_17" value="0.9"/>
+        <joint name="joint_18" value="-1.57"/>
+        <joint name="joint_19" value="1"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="0"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="1.57"/>
+        <joint name="joint_7" value="0"/>
+        <joint name="joint_8" value="1.57"/>
+        <joint name="joint_9" value="-1"/>
+    </group_state>
+    <group_state name="قاف" group="main">
+        <joint name="joint_1" value="0"/>
+        <joint name="joint_10" value="1.57"/>
+        <joint name="joint_11" value="1.57"/>
+        <joint name="joint_12" value="1"/>
+        <joint name="joint_13" value="1.57"/>
+        <joint name="joint_14" value="-1.57"/>
+        <joint name="joint_15" value="0.8"/>
+        <joint name="joint_16" value="1.57"/>
+        <joint name="joint_17" value="1"/>
+        <joint name="joint_18" value="-1.5"/>
+        <joint name="joint_19" value="0.9"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="0"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="0.25"/>
+        <joint name="joint_7" value="0.25"/>
+        <joint name="joint_8" value="1.57"/>
+        <joint name="joint_9" value="-1"/>
+    </group_state>
+    <group_state name="ك" group="main">
+        <joint name="joint_1" value="0"/>
+        <joint name="joint_10" value="0"/>
+        <joint name="joint_11" value="0"/>
+        <joint name="joint_12" value="0"/>
+        <joint name="joint_13" value="0"/>
+        <joint name="joint_14" value="0"/>
+        <joint name="joint_15" value="0"/>
+        <joint name="joint_16" value="0"/>
+        <joint name="joint_17" value="0"/>
+        <joint name="joint_18" value="0"/>
+        <joint name="joint_19" value="0"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="0"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="0"/>
+        <joint name="joint_7" value="0"/>
+        <joint name="joint_8" value="1.57"/>
+        <joint name="joint_9" value="-1.57"/>
+    </group_state>
+    <group_state name="و" group="main">
+        <joint name="joint_1" value="1.57"/>
+        <joint name="joint_10" value="1"/>
+        <joint name="joint_11" value="1.57"/>
+        <joint name="joint_12" value="1"/>
+        <joint name="joint_13" value="1"/>
+        <joint name="joint_14" value="-1.57"/>
+        <joint name="joint_15" value="0.9"/>
+        <joint name="joint_16" value="1.57"/>
+        <joint name="joint_17" value="0.9"/>
+        <joint name="joint_18" value="-1.57"/>
+        <joint name="joint_19" value="1"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="0"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="1"/>
+        <joint name="joint_7" value="1"/>
+        <joint name="joint_8" value="1"/>
+        <joint name="joint_9" value="-1"/>
+    </group_state>
+    <group_state name="هاء" group="main">
+        <joint name="joint_1" value="0"/>
+        <joint name="joint_10" value="1.57"/>
+        <joint name="joint_11" value="1.0219"/>
+        <joint name="joint_12" value="0.4831"/>
+        <joint name="joint_13" value="1.57"/>
+        <joint name="joint_14" value="-0.5574"/>
+        <joint name="joint_15" value="1.1055"/>
+        <joint name="joint_16" value="0.3902"/>
+        <joint name="joint_17" value="0.6"/>
+        <joint name="joint_18" value="0"/>
+        <joint name="joint_19" value="0.6"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="1.0219"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="1.57"/>
+        <joint name="joint_7" value="1.57"/>
+        <joint name="joint_8" value="1.57"/>
+        <joint name="joint_9" value="-0.6317"/>
+    </group_state>
+    <group_state name="ق" group="main">
+        <joint name="joint_1" value="0"/>
+        <joint name="joint_10" value="1.57"/>
+        <joint name="joint_11" value="1.57"/>
+        <joint name="joint_12" value="1"/>
+        <joint name="joint_13" value="1.57"/>
+        <joint name="joint_14" value="-1.57"/>
+        <joint name="joint_15" value="0.8"/>
+        <joint name="joint_16" value="1.57"/>
+        <joint name="joint_17" value="1"/>
+        <joint name="joint_18" value="-1.5"/>
+        <joint name="joint_19" value="0.9"/>
+        <joint name="joint_2" value="0"/>
+        <joint name="joint_3" value="0"/>
+        <joint name="joint_4" value="0"/>
+        <joint name="joint_5" value="0"/>
+        <joint name="joint_6" value="0.25"/>
+        <joint name="joint_7" value="0.25"/>
+        <joint name="joint_8" value="1.57"/>
+        <joint name="joint_9" value="-1"/>
+    </group_state>
+    <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
+    <end_effector name="ee" parent_link="link_1" group="ee_group"/>
+    <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <disable_collisions link1="base_link" link2="link_1" reason="Adjacent"/>
+    <disable_collisions link1="link_1" link2="link_10" reason="Never"/>
+    <disable_collisions link1="link_1" link2="link_11" reason="Never"/>
+    <disable_collisions link1="link_1" link2="link_13" reason="Never"/>
+    <disable_collisions link1="link_1" link2="link_14" reason="Never"/>
+    <disable_collisions link1="link_1" link2="link_15" reason="Never"/>
+    <disable_collisions link1="link_1" link2="link_16" reason="Never"/>
+    <disable_collisions link1="link_1" link2="link_17" reason="Never"/>
+    <disable_collisions link1="link_1" link2="link_18" reason="Never"/>
+    <disable_collisions link1="link_1" link2="link_19" reason="Never"/>
+    <disable_collisions link1="link_1" link2="link_2" reason="Adjacent"/>
+    <disable_collisions link1="link_1" link2="link_3" reason="Never"/>
+    <disable_collisions link1="link_1" link2="link_5" reason="Never"/>
+    <disable_collisions link1="link_1" link2="link_6" reason="Never"/>
+    <disable_collisions link1="link_1" link2="link_7" reason="Never"/>
+    <disable_collisions link1="link_1" link2="link_8" reason="Never"/>
+    <disable_collisions link1="link_1" link2="link_9" reason="Never"/>
+    <disable_collisions link1="link_10" link2="link_11" reason="Adjacent"/>
+    <disable_collisions link1="link_10" link2="link_12" reason="Never"/>
+    <disable_collisions link1="link_10" link2="link_13" reason="Never"/>
+    <disable_collisions link1="link_10" link2="link_16" reason="Never"/>
+    <disable_collisions link1="link_10" link2="link_18" reason="Never"/>
+    <disable_collisions link1="link_10" link2="link_19" reason="Never"/>
+    <disable_collisions link1="link_10" link2="link_2" reason="Never"/>
+    <disable_collisions link1="link_10" link2="link_3" reason="Never"/>
+    <disable_collisions link1="link_10" link2="link_4" reason="Adjacent"/>
+    <disable_collisions link1="link_10" link2="link_5" reason="Never"/>
+    <disable_collisions link1="link_10" link2="link_6" reason="Never"/>
+    <disable_collisions link1="link_10" link2="link_7" reason="Never"/>
+    <disable_collisions link1="link_10" link2="link_8" reason="Never"/>
+    <disable_collisions link1="link_10" link2="link_9" reason="Never"/>
+    <disable_collisions link1="link_11" link2="link_12" reason="Adjacent"/>
+    <disable_collisions link1="link_11" link2="link_13" reason="Never"/>
+    <disable_collisions link1="link_11" link2="link_16" reason="Never"/>
+    <disable_collisions link1="link_11" link2="link_18" reason="Never"/>
+    <disable_collisions link1="link_11" link2="link_19" reason="Never"/>
+    <disable_collisions link1="link_11" link2="link_2" reason="Never"/>
+    <disable_collisions link1="link_11" link2="link_3" reason="Never"/>
+    <disable_collisions link1="link_11" link2="link_4" reason="Never"/>
+    <disable_collisions link1="link_11" link2="link_5" reason="Never"/>
+    <disable_collisions link1="link_11" link2="link_6" reason="Never"/>
+    <disable_collisions link1="link_11" link2="link_7" reason="Never"/>
+    <disable_collisions link1="link_11" link2="link_8" reason="Never"/>
+    <disable_collisions link1="link_11" link2="link_9" reason="Never"/>
+    <disable_collisions link1="link_12" link2="link_13" reason="Never"/>
+    <disable_collisions link1="link_12" link2="link_16" reason="Never"/>
+    <disable_collisions link1="link_12" link2="link_17" reason="Never"/>
+    <disable_collisions link1="link_12" link2="link_18" reason="Never"/>
+    <disable_collisions link1="link_12" link2="link_19" reason="Never"/>
+    <disable_collisions link1="link_12" link2="link_2" reason="Never"/>
+    <disable_collisions link1="link_12" link2="link_3" reason="Never"/>
+    <disable_collisions link1="link_12" link2="link_5" reason="Never"/>
+    <disable_collisions link1="link_12" link2="link_6" reason="Never"/>
+    <disable_collisions link1="link_12" link2="link_7" reason="Never"/>
+    <disable_collisions link1="link_12" link2="link_8" reason="Never"/>
+    <disable_collisions link1="link_12" link2="link_9" reason="Never"/>
+    <disable_collisions link1="link_13" link2="link_14" reason="Adjacent"/>
+    <disable_collisions link1="link_13" link2="link_15" reason="Never"/>
+    <disable_collisions link1="link_13" link2="link_16" reason="Never"/>
+    <disable_collisions link1="link_13" link2="link_17" reason="Never"/>
+    <disable_collisions link1="link_13" link2="link_18" reason="Never"/>
+    <disable_collisions link1="link_13" link2="link_19" reason="Never"/>
+    <disable_collisions link1="link_13" link2="link_2" reason="Never"/>
+    <disable_collisions link1="link_13" link2="link_3" reason="Never"/>
+    <disable_collisions link1="link_13" link2="link_4" reason="Never"/>
+    <disable_collisions link1="link_13" link2="link_5" reason="Adjacent"/>
+    <disable_collisions link1="link_13" link2="link_6" reason="Never"/>
+    <disable_collisions link1="link_13" link2="link_7" reason="Never"/>
+    <disable_collisions link1="link_13" link2="link_8" reason="Never"/>
+    <disable_collisions link1="link_13" link2="link_9" reason="Never"/>
+    <disable_collisions link1="link_14" link2="link_15" reason="Adjacent"/>
+    <disable_collisions link1="link_14" link2="link_16" reason="Never"/>
+    <disable_collisions link1="link_14" link2="link_17" reason="Never"/>
+    <disable_collisions link1="link_14" link2="link_18" reason="Never"/>
+    <disable_collisions link1="link_14" link2="link_19" reason="Never"/>
+    <disable_collisions link1="link_14" link2="link_2" reason="Never"/>
+    <disable_collisions link1="link_14" link2="link_3" reason="Never"/>
+    <disable_collisions link1="link_14" link2="link_4" reason="Never"/>
+    <disable_collisions link1="link_14" link2="link_5" reason="Never"/>
+    <disable_collisions link1="link_14" link2="link_6" reason="Never"/>
+    <disable_collisions link1="link_14" link2="link_7" reason="Never"/>
+    <disable_collisions link1="link_14" link2="link_8" reason="Never"/>
+    <disable_collisions link1="link_14" link2="link_9" reason="Never"/>
+    <disable_collisions link1="link_15" link2="link_16" reason="Never"/>
+    <disable_collisions link1="link_15" link2="link_17" reason="Never"/>
+    <disable_collisions link1="link_15" link2="link_18" reason="Never"/>
+    <disable_collisions link1="link_15" link2="link_19" reason="Never"/>
+    <disable_collisions link1="link_15" link2="link_2" reason="Never"/>
+    <disable_collisions link1="link_15" link2="link_3" reason="Never"/>
+    <disable_collisions link1="link_15" link2="link_4" reason="Never"/>
+    <disable_collisions link1="link_15" link2="link_5" reason="Never"/>
+    <disable_collisions link1="link_15" link2="link_6" reason="Never"/>
+    <disable_collisions link1="link_15" link2="link_7" reason="Never"/>
+    <disable_collisions link1="link_15" link2="link_8" reason="Never"/>
+    <disable_collisions link1="link_15" link2="link_9" reason="Never"/>
+    <disable_collisions link1="link_16" link2="link_17" reason="Adjacent"/>
+    <disable_collisions link1="link_16" link2="link_18" reason="Never"/>
+    <disable_collisions link1="link_16" link2="link_19" reason="Never"/>
+    <disable_collisions link1="link_16" link2="link_2" reason="Never"/>
+    <disable_collisions link1="link_16" link2="link_3" reason="Never"/>
+    <disable_collisions link1="link_16" link2="link_4" reason="Never"/>
+    <disable_collisions link1="link_16" link2="link_5" reason="Never"/>
+    <disable_collisions link1="link_16" link2="link_6" reason="Adjacent"/>
+    <disable_collisions link1="link_16" link2="link_7" reason="Never"/>
+    <disable_collisions link1="link_16" link2="link_8" reason="Never"/>
+    <disable_collisions link1="link_17" link2="link_18" reason="Never"/>
+    <disable_collisions link1="link_17" link2="link_19" reason="Never"/>
+    <disable_collisions link1="link_17" link2="link_3" reason="Never"/>
+    <disable_collisions link1="link_17" link2="link_4" reason="Never"/>
+    <disable_collisions link1="link_17" link2="link_5" reason="Never"/>
+    <disable_collisions link1="link_17" link2="link_6" reason="Never"/>
+    <disable_collisions link1="link_17" link2="link_7" reason="Never"/>
+    <disable_collisions link1="link_18" link2="link_19" reason="Adjacent"/>
+    <disable_collisions link1="link_18" link2="link_2" reason="Never"/>
+    <disable_collisions link1="link_18" link2="link_3" reason="Never"/>
+    <disable_collisions link1="link_18" link2="link_4" reason="Never"/>
+    <disable_collisions link1="link_18" link2="link_5" reason="Never"/>
+    <disable_collisions link1="link_18" link2="link_6" reason="Never"/>
+    <disable_collisions link1="link_18" link2="link_7" reason="Adjacent"/>
+    <disable_collisions link1="link_18" link2="link_8" reason="Never"/>
+    <disable_collisions link1="link_18" link2="link_9" reason="Never"/>
+    <disable_collisions link1="link_19" link2="link_2" reason="Never"/>
+    <disable_collisions link1="link_19" link2="link_3" reason="Never"/>
+    <disable_collisions link1="link_19" link2="link_4" reason="Never"/>
+    <disable_collisions link1="link_19" link2="link_5" reason="Never"/>
+    <disable_collisions link1="link_19" link2="link_6" reason="Never"/>
+    <disable_collisions link1="link_19" link2="link_7" reason="Never"/>
+    <disable_collisions link1="link_19" link2="link_8" reason="Never"/>
+    <disable_collisions link1="link_2" link2="link_3" reason="Adjacent"/>
+    <disable_collisions link1="link_2" link2="link_4" reason="Adjacent"/>
+    <disable_collisions link1="link_2" link2="link_5" reason="Adjacent"/>
+    <disable_collisions link1="link_2" link2="link_6" reason="Adjacent"/>
+    <disable_collisions link1="link_2" link2="link_7" reason="Adjacent"/>
+    <disable_collisions link1="link_2" link2="link_8" reason="Never"/>
+    <disable_collisions link1="link_2" link2="link_9" reason="Never"/>
+    <disable_collisions link1="link_3" link2="link_4" reason="Never"/>
+    <disable_collisions link1="link_3" link2="link_5" reason="Never"/>
+    <disable_collisions link1="link_3" link2="link_6" reason="Never"/>
+    <disable_collisions link1="link_3" link2="link_7" reason="Never"/>
+    <disable_collisions link1="link_3" link2="link_8" reason="Adjacent"/>
+    <disable_collisions link1="link_3" link2="link_9" reason="Never"/>
+    <disable_collisions link1="link_4" link2="link_5" reason="Default"/>
+    <disable_collisions link1="link_4" link2="link_6" reason="Never"/>
+    <disable_collisions link1="link_4" link2="link_7" reason="Never"/>
+    <disable_collisions link1="link_4" link2="link_8" reason="Never"/>
+    <disable_collisions link1="link_4" link2="link_9" reason="Never"/>
+    <disable_collisions link1="link_5" link2="link_6" reason="Never"/>
+    <disable_collisions link1="link_5" link2="link_7" reason="Never"/>
+    <disable_collisions link1="link_5" link2="link_8" reason="Never"/>
+    <disable_collisions link1="link_5" link2="link_9" reason="Never"/>
+    <disable_collisions link1="link_6" link2="link_7" reason="Never"/>
+    <disable_collisions link1="link_6" link2="link_8" reason="Never"/>
+    <disable_collisions link1="link_6" link2="link_9" reason="Never"/>
+    <disable_collisions link1="link_7" link2="link_8" reason="Never"/>
+    <disable_collisions link1="link_7" link2="link_9" reason="Never"/>
+    <disable_collisions link1="link_8" link2="link_9" reason="Adjacent"/>
+</robot>

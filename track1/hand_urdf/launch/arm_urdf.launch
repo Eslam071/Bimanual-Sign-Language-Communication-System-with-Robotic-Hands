@@ -1,0 +1,34 @@
+<launch>
+	<arg name="arg_x" default="0.00" />
+	<arg name="arg_y" default="0.00" />
+	<arg name="arg_z" default="0.00" />
+	<arg name="arg_R" default="0.00" />
+	<arg name="arg_P" default="0.00" />
+	<arg name="arg_Y" default="0.00" />
+	
+	
+	<!--Urdf file path-->
+	<param name="robot_description" textfile="$(find hand_urdf)/urdf/hand_urdf_Error.urdf"/>
+
+
+	<!--spawn a empty gazebo world-->
+	<include file="$(find gazebo_ros)/launch/empty_world.launch" />
+	<node name="tf_footprint_base" pkg="tf" type="static_transform_publisher" output="log" args="0 0 0 0 0 0 base_link base_footprint 40" />
+	<!-- it added to log -->
+
+
+	<!--spawn model-->
+	<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-x $(arg arg_x) -y $(arg arg_y) -z $(arg arg_z) -Y $(arg arg_Y) -param robot_description -urdf -model hand_urdf_Error -J joint_1 0.0 -J joint_2 0.0 -J joint_3 0.0 -J joint_4 0.0 -J joint_5 0.0 -J joint_6 0.0 -J joint_7 0.0 -J joint_8 0.0 -J joint_9 0.0 -J joint_10 0.0 -J joint_11 0.0 -J joint_12 0.0 -J joint_13 0.0 -J joint_14 0.0 -J joint_15 0.0 -J joint_16 0.0 -J joint_17 0.0 -J joint_18 0.0 -J joint_19 0.0" />
+
+
+	<!--Load and launch the joint trajectory controller-->
+	<rosparam file ="$(find hand_urdf)/config/joint_trajectory_controller.yaml" command="load"/>
+	<node name= "controller_spawner" pkg= "controller_manager" type="spawner" respawn="false" output="log" args="joint_state_controller robot_arm_controller hand_ee_controller"/>
+	<!-- it has output sceen and edited to log -->
+
+
+	<!-- Robot State Publisher for TF of each joint: publishes all the current states of the joint, then RViz can visualize -->
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="log"/>
+	<!-- it has output sceen and edited to log -->
+	
+</launch>
