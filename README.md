@@ -25,6 +25,8 @@ The **Bimanual Sign Language Communication System** enables communication betwee
 - **Eslam Wael**: Robot Control & Communication
 - **Ziad Yasser**: Computer Vision
 - **Mohammed Younes**: Voice Recognition
+- **Omar Abd Alhafez**: Mechanical design & Manufacturing
+- **Mohammed Alaa**: Mechanical design & Manufacturing
 
 ## Folder Structure
 
